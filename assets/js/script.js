@@ -1,5 +1,27 @@
 
 document.addEventListener('DOMContentLoaded', () => {
+  // Theme toggle functionality
+  const themeToggle = document.getElementById('theme-toggle');
+  const body = document.body;
+
+  // Check for saved theme preference or default to dark mode
+  const currentTheme = localStorage.getItem('theme') || 'dark';
+  if (currentTheme === 'light') {
+    body.classList.add('light-mode');
+    themeToggle.checked = true;
+  }
+
+  // Toggle theme on switch change
+  themeToggle.addEventListener('change', () => {
+    if (themeToggle.checked) {
+      body.classList.add('light-mode');
+      localStorage.setItem('theme', 'light');
+    } else {
+      body.classList.remove('light-mode');
+      localStorage.setItem('theme', 'dark');
+    }
+  });
+
   window.history.scrollRestoration = "manual";
   window.scrollTo(0, 0);
   const tl = anime.timeline({

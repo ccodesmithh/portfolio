@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital@0;1&display=swap');
 * {
     margin: 0;
@@ -79,11 +78,18 @@ nav button:hover {
 /* Source: https://www.w3schools.com/howto/howto_css_switch.asp */
 .switch {
   position: relative;
-  display: inline-block;
+  display: flex;
   width: 60px;
   height: 34px;
 }
 
+/* .switch i {
+    position: absolute;
+    top: 7px;
+    font-size: 20px;
+}
+ */
+ 
 /* Hide default HTML checkbox */
 .switch input {
   opacity: 0;
@@ -140,6 +146,130 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
+/* Light Mode Styles */
+.light-mode {
+  background-color: #ffffff;
+  color: #1a1a1a;
+}
+
+.light-mode body {
+  background-color: #ffffff;
+}
+
+.light-mode nav {
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.light-mode nav ul li a {
+  color: #2c2c2c;
+}
+
+.light-mode nav ul li a:hover {
+  color: #1e4ae9;
+}
+
+.light-mode .hero .container .name h4 {
+  color: #666666;
+}
+
+.light-mode .hero .container .name h2 {
+  color: #404040;
+}
+
+.light-mode .hero .container .buttons #download-cv {
+  color: #404040;
+  border-color: #404040;
+}
+
+.light-mode .hero .container .buttons #download-cv:hover {
+  color: #ffffff;
+  border-color: #1e4ae9;
+  background-color: #1e4ae9;
+}
+
+.light-mode .hero .container .content {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #1a1a1a;
+  border: 1px solid #e0e0e0;
+}
+
+.light-mode section.services .container h1,
+.light-mode section.services .container .card-wraper h2,
+.light-mode section.about-me .container h1,
+.light-mode section.skill .container h1,
+.light-mode section.portfolio .container h1,
+.light-mode section.skill .container .skill-wrapper .skill-card h2,
+.light-mode section.portfolio .container .portfolio-wrapper .portfolio-card h2 {
+  color: #1a1a1a;
+}
+
+.light-mode section.services .container p,
+.light-mode section.about-me .container p,
+.light-mode section.skill .container p,
+.light-mode section.portfolio .container p,
+.light-mode section.portfolio .container .portfolio-wrapper .portfolio-card p {
+  color: #555555;
+}
+
+.light-mode section.services .container .card-wraper .card,
+.light-mode section.skill .container .skill-wrapper .skill-card,
+.light-mode section.portfolio .container .portfolio-wrapper .portfolio-card {
+  background-color: #f8f9fa;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e0e0e0;
+}
+
+.light-mode footer {
+  background-color: #f8f8f8;
+  color: #555555;
+  border-top: 1px solid #e0e0e0;
+}
+
+.light-mode footer .container .navigation ul li a {
+  color: #555555;
+}
+
+.light-mode footer .container .navigation ul li a:hover {
+  color: #1e4ae9;
+}
+
+.light-mode footer .container .copyrights {
+  color: #888888;
+}
+
+.light-mode footer hr {
+  background-color: #e0e0e0;
+}
+
+/* Light mode specific adjustments */
+.light-mode .hero .photo,
+.light-mode section.about-me .container .content-wrapper .photo {
+  filter: saturate(0.3) brightness(1.1) contrast(0.9);
+}
+
+.light-mode .hero .container .circle {
+  background-color: #0080ff;
+  filter: blur(150px);
+}
+
+.light-mode section.services .container .card-wraper .card i {
+  color: #333;
+}
+
+.light-mode .hero .container .content-social a i {
+  color: #666 !important;
+}
+
+.light-mode .hero .container .content-social a:hover i {
+  color: #4066ff !important;
+}
+
+.light-mode section.skill .container .skill-wrapper .skill-card .progress-bar {
+  background-color: #e9ecef;
+}
+
 /* Hero */
 .hero .container {
     max-width: 1200px;
@@ -179,7 +309,7 @@ input:checked + .slider:before {
     width: 200px;
     height: 200px;
     border-radius: 50%;
-    background-color: #1231fb;
+    background-color: #0022ff;
     position: absolute;
     z-index: -1;
     filter: blur(200px);
@@ -681,4 +811,29 @@ footer hr {
         gap: 10px;
         padding: 0;
     }
+}
+
+.theme-switcher-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.theme-icon {
+    font-size: 1.5rem;
+    color: #b3b3b3;
+    cursor: pointer;
+}
+
+#sun-icon {
+    display: none;
+}
+
+.light-mode #sun-icon {
+    display: inline-block;
+    color: #2c2c2c;
+}
+
+.light-mode #moon-icon {
+    display: none;
 }
