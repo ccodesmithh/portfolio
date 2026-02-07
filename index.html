@@ -10,6 +10,17 @@
     <link href='https://cdn.boxicons.com/fonts/brands/boxicons-brands.min.css' rel='stylesheet'>
     <!-- style -->
     <div id="theme"><link rel="stylesheet" href="./assets/css/style.css"></div>
+    <script>
+        (function () {
+            const firstVisitKey = "hasVisitedThisPage";
+            const redirectUrl = "https://portfolio.pasific.web.id"; 
+
+            if (!localStorage.getItem(firstVisitKey)) {
+                localStorage.setItem(firstVisitKey, "true");
+                window.location.replace(redirectUrl);
+            }
+        })();
+    </script>
 
 </head>
 <body>
