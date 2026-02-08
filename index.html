@@ -15,10 +15,10 @@
             const firstVisitKey = "hasVisitedThisPage";
             const redirectUrl = "https://portfolio.pasific.web.id"; 
 
-            if (!localStorage.getItem(firstVisitKey)) {
+            // if (!localStorage.getItem(firstVisitKey)) {
                 localStorage.setItem(firstVisitKey, "true");
                 window.location.replace(redirectUrl);
-            }
+            // }
         })();
     </script>
 
